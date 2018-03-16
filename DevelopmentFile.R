@@ -17,10 +17,11 @@ dir()
 current.code<-as.package("easyRasch")
 load_all(current.code)
 document(current.code)
-test(current.code)
+
 
 
 #=====================================
+#Test Class
 new(Class = "Rasch",  #Works
     name="Frank", 
     a=seq(1,5,1), 
@@ -35,3 +36,14 @@ new(Class = "Rasch", #doesn't work; correct error for a
     name="Frank", 
     a=seq(1,4,1), 
     yj=c(3,0,0,1,1))
+
+#toy data/examples
+raschObj<-new(Class = "Rasch", name="Zoe", a=rep(1,3), yj=c(0,1,0))
+theta<-1
+probability(raschObj, theta)
+likelihood(raschObj,theta)*prior(theta)*theta
+prior(theta)
+EAP(raschObj, lower=1, upper=2)
+print(raschObj)
+#+++++++++++++++++++++
+ 
