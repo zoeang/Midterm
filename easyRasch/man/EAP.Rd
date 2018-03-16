@@ -26,6 +26,9 @@ theta<-1
 EAP(raschObj, lower=1, upper=2)
 
 }
+\seealso{
+\code{\link{likelihood}}, \code{\link{prior}}
+}
 \author{
 Zoe <\email{zoeang@wustl.edu}>
 }
