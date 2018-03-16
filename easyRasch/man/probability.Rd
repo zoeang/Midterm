@@ -18,6 +18,14 @@ A vector of length n that represents Pij for each question
 \description{
 Calculates the probability of Pij, the output of a Rasch model
 }
+\examples{
+raschObj<-new(Class = "Rasch", name="Zoe", a=rep(1,3), yj=c(0,1,0))
+theta<-1
+probability(raschObj, theta)
+}
+\seealso{
+\code{\link{Rasch}} for object class
+}
 \author{
 Zoe <\email{zoeang@wustl.edu}>
 }

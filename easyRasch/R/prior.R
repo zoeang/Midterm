@@ -5,6 +5,8 @@
 #' @param theta A proposed valie of theta_j
 #' 
 #' @return The height of the specified nromal curve evaluated at theta_j
+#' @examples theta<-1
+#' prior(theta)
 #' @author Zoe <\email{zoeang@wustl.edu}>
 #' 
 #' @rdname prior

@@ -7,10 +7,11 @@ Author: Zoe
 Maintainer: Zoe <zoeang@wustl.edu>
 Description: The package will estimate the theta_j parameter of a Rasch model, assuming there is no missing data
 License: GPL(>=2)
-Collate: 
+Collate:
   'Rasch.R'
   'probability.R'
   'likelihood.R'
   'prior.R'
   'EAP.R'
 RoxygenNote: 6.0.1
+Suggests: testthat

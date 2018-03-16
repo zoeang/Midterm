@@ -12,7 +12,7 @@ An object of class Rasch has the following slots:
 \itemize{
 \item \code{name} The name of the test taker
 \item \code{a} A vector of question-item parameters
-\item \code{yj} TA vector of answers for the respondent
+\item \code{yj} A vector of answers for the respondent
 }
 }
 \author{

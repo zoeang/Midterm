@@ -20,6 +20,12 @@ The value of theta_j as specified by the scary formula
 \description{
 Estimates the a posteriori value of theta_j using a scary formula
 }
+\examples{
+raschObj<-new(Class = "Rasch", name="Zoe", a=rep(1,3), yj=c(0,1,0))
+theta<-1
+EAP(raschObj, lower=1, upper=2)
+
+}
 \author{
 Zoe <\email{zoeang@wustl.edu}>
 }

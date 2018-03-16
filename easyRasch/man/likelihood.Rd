@@ -18,6 +18,14 @@ The calculated likelihood of theta_j conditioned on yj
 \description{
 Calculates the likelihood od a proposed value of theta_j givn the responses of the test taker
 }
+\examples{
+raschObj<-new(Class = "Rasch", name="Zoe", a=rep(1,3), yj=c(0,1,0))
+theta<-1
+likelihood(raschObj, theta)
+}
+\seealso{
+\code{\link{probability}}
+}
 \author{
 Zoe <\email{zoeang@wustl.edu}>
 }

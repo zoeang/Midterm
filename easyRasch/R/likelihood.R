@@ -6,8 +6,11 @@
 #' @param theta A proposed valie of theta_j
 #' 
 #' @return The calculated likelihood of theta_j conditioned on yj
+#' @examples raschObj<-new(Class = "Rasch", name="Zoe", a=rep(1,3), yj=c(0,1,0))
+#' theta<-1
+#' likelihood(raschObj, theta)
 #' @author Zoe <\email{zoeang@wustl.edu}>
-#' 
+#' @seealso \code{\link{probability}} 
 #' @rdname likelihood
 #' @export
 setMethod("initialize", "Rasch", function(.Object, ...){

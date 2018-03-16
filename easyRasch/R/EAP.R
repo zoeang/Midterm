@@ -7,8 +7,12 @@
 #' @param upper The upper limits of integration; default is 6
 #' 
 #' @return The value of theta_j as specified by the scary formula
+#' @examples raschObj<-new(Class = "Rasch", name="Zoe", a=rep(1,3), yj=c(0,1,0))
+#' theta<-1
+#' EAP(raschObj, lower=1, upper=2)
+#'
 #' @author Zoe <\email{zoeang@wustl.edu}>
-#' 
+#' @seealso \code{\link{likelihood}}, \code{\link{prior}}
 #' @rdname EAP
 #' @export
 setMethod("initialize", "Rasch", function(.Object, ...){
@@ -20,27 +24,24 @@ return(value)
 
 #' @export
 setGeneric("EAP", #The generic is called EAP
-           function(object="Rasch",...) { #***
+           function(object,...) { #***
              standardGeneric("EAP")
            })
 
 
 #' @export
 setMethod(f="EAP", signature="Rasch",
-          definition=function(object=raschObj,lower=-6, upper=6){
-            #denominator
-            like.out<-likelihood(object,theta)
-            prior.out<-prior(theta)
-            ftheta<-function(x=like.out, y=prior.out){
-              return(x*y)
+          definition=function(object, lower=-6, upper=6){
+            numerator<-function(theta){
+              theta*likelihood(object, theta)*prior(theta)
             }
-            denominator<-integrate(f=ftheta, lower=lower, upper=upper)
-            #numerator==================================================
-            ftheta2<-function(x=like.out, y=prior.out, theta=theta){
-              return(theta*x*y)
+            int.num<-integrate(numerator,lower,upper)$value
+            
+            denominator<-function(theta){
+              likelihood(object, theta)*prior(theta)
             }
-            numerator<-integrate(f=ftheta2, lower=lower, upper=upper)
-            return(numerator$value/denominator$value)
+            int.den<-integrate(denominator, lower,upper)$value
+            return(int.num/int.den)
           }
 )
 

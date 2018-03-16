@@ -16,6 +16,10 @@ The height of the specified nromal curve evaluated at theta_j
 \description{
 Estimates theta_j using Bayesian prior to get a more reasonable estimate of the parameter; this wull use the normal curve with mean=0 and sd=3
 }
+\examples{
+theta<-1
+prior(theta)
+}
 \author{
 Zoe <\email{zoeang@wustl.edu}>
 }

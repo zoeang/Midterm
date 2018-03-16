@@ -6,8 +6,11 @@
 #' @param theta A proposed valie of theta_j
 #' 
 #' @return A vector of length n that represents Pij for each question
+#' @examples raschObj<-new(Class = "Rasch", name="Zoe", a=rep(1,3), yj=c(0,1,0))
+#' theta<-1
+#' probability(raschObj, theta)
 #' @author Zoe <\email{zoeang@wustl.edu}>
-#' 
+#' @seealso \code{\link{Rasch}} for object class
 #' @rdname probability
 #' @export
 setMethod("initialize", "Rasch", function(.Object, ...){
