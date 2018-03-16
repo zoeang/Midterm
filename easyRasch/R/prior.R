@@ -7,7 +7,7 @@
 #' @return The height of the specified nromal curve evaluated at theta_j
 #' @author Zoe <\email{zoeang@wustl.edu}>
 #' 
-#' @rdname probability
+#' @rdname prior
 #' @export
 setMethod("initialize", "numeric", function(.Object, ...){
   value=callNextMethod()
@@ -16,7 +16,7 @@ setMethod("initialize", "numeric", function(.Object, ...){
 })
 
 #' @export
-setGeneric("prior", #The generic is called probability
+setGeneric("prior", #The generic is called prior
            function(object="numeric") { #***
              standardGeneric("prior")
            })
