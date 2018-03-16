@@ -27,7 +27,7 @@ setGeneric("EAP", #The generic is called EAP
 
 #' @export
 setMethod(f="EAP", signature="Rasch",
-          definition=function(object=raschObj,lower=-6, upper=6, thetanum=theta){
+          definition=function(object=raschObj,lower=-6, upper=6){
             #denominator
             like.out<-likelihood(object,theta)
             prior.out<-prior(theta)
@@ -35,12 +35,12 @@ setMethod(f="EAP", signature="Rasch",
               return(x*y)
             }
             denominator<-integrate(f=ftheta, lower=lower, upper=upper)
-            #numerator
-            ftheta2<-function(x=like.out, y=prior.out, thetanum=theta){
-              return(thetanum*x*y)
+            #numerator==================================================
+            ftheta2<-function(x=like.out, y=prior.out, theta=theta){
+              return(theta*x*y)
             }
             numerator<-integrate(f=ftheta2, lower=lower, upper=upper)
-            return(numerator/denominator)
+            return(numerator$value/denominator$value)
           }
 )
 

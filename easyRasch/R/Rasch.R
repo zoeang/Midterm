@@ -41,5 +41,10 @@ setMethod("initialize", "Rasch", function(.Object, ...){
   validObject(value)
   return(value)
 })
+#' @export
+setMethod("print", "Rasch",
+          function(x){ 
+            print(x@name,EAP(x))
+          })
 #=====================================================
 
